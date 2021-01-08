@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griglia numeri colori</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        #app {
+            display: grid;
+            grid-template-columns: repeat(6, auto);
+        }
+        .block {
+            height: 70px;
+            width: 70px;
+            display: grid;
+            place-items: center;
+            background-color: bisque;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <div class="block" v-for="(number, index) in numbers" @click="getNumber(index)">
+            <span v-if="number">{{ number }}</span>
+            <span v-else>?</span>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./bonus.js"></script>
+</body>
+</html>
