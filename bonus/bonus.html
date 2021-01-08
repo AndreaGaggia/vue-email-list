@@ -21,13 +21,18 @@
             background-color: bisque;
             border: 1px solid #000;
             cursor: pointer;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
 
     <div id="app">
-        <div class="block" v-for="(number, index) in numbers" @click="getNumber(index)">
+        <div
+        class="block"
+        v-for="(number, index) in numbers"
+        @click="getNumber(index)"
+        :style="greenOrYellow(number)">
             <span v-if="number">{{ number }}</span>
             <span v-else>?</span>
         </div>
